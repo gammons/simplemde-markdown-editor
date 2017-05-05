@@ -1901,6 +1901,9 @@ SimpleMDE.redo = redo;
 SimpleMDE.togglePreview = togglePreview;
 SimpleMDE.toggleSideBySide = toggleSideBySide;
 SimpleMDE.toggleFullScreen = toggleFullScreen;
+SimpleMDE._replaceSelection = _replaceSelection;
+SimpleMDE._toggleLine = _toggleLine;
+SimpleMDE._toggleHeading = _toggleHeading;
 
 /**
  * Bind instance methods for exports.
