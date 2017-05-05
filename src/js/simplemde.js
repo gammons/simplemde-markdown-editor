@@ -644,6 +644,14 @@ function drawImage(editor) {
 	_replaceSelection(cm, stat.image, options.insertTexts.image, url);
 }
 
+function drawImageUrl(editor, url) {
+	var cm = editor.codemirror;
+	var stat = getState(cm);
+	var options = editor.options;
+	_replaceSelection(cm, stat.image, options.insertTexts.image, url);
+
+}
+
 /**
  * Action for drawing a table.
  */
@@ -1894,6 +1902,7 @@ SimpleMDE.toggleOrderedList = toggleOrderedList;
 SimpleMDE.cleanBlock = cleanBlock;
 SimpleMDE.drawLink = drawLink;
 SimpleMDE.drawImage = drawImage;
+SimpleMDE.drawImageUrl = drawImageUrl;
 SimpleMDE.drawTable = drawTable;
 SimpleMDE.drawHorizontalRule = drawHorizontalRule;
 SimpleMDE.undo = undo;
@@ -1952,6 +1961,9 @@ SimpleMDE.prototype.drawLink = function() {
 };
 SimpleMDE.prototype.drawImage = function() {
 	drawImage(this);
+};
+SimpleMDE.prototype.drawImageUrl = function() {
+	drawImageUrl(this);
 };
 SimpleMDE.prototype.drawTable = function() {
 	drawTable(this);
