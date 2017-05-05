@@ -1962,8 +1962,8 @@ SimpleMDE.prototype.drawLink = function() {
 SimpleMDE.prototype.drawImage = function() {
 	drawImage(this);
 };
-SimpleMDE.prototype.drawImageUrl = function() {
-	drawImageUrl(this);
+SimpleMDE.prototype.drawImageUrl = function(simplemde, url) {
+	drawImageUrl(this, url);
 };
 SimpleMDE.prototype.drawTable = function() {
 	drawTable(this);
