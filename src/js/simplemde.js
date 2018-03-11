@@ -645,21 +645,22 @@ function drawImage(editor) {
 }
 
 function drawImageUrl(editor, url, style) {
-	var cm = editor.codemirror;
-	var stat = getState(cm);
-	var options = editor.options;
-	switch(style) {
-		case(""):
-			_replaceSelection(cm, stat.image, options.insertTexts.image, url);
-			break;
-		case("inline"):
-			_replaceSelection(cm, stat.image, options.insertTexts.inlineImage, url);
-			break;
-		case("filter"):
-			_replaceSelection(cm, stat.image, options.insertTexts.filterImage, url);
-		case("kenburns"):
-			_replaceSelection(cm, stat.image, options.insertTexts.kenburnsImage, url);
-	}
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+  var options = editor.options;
+  switch(style) {
+    case(""):
+      _replaceSelection(cm, stat.image, options.insertTexts.image, url);
+      break;
+    case("inline"):
+      _replaceSelection(cm, stat.image, options.insertTexts.inlineImage, url);
+      break;
+    case("filter"):
+      _replaceSelection(cm, stat.image, options.insertTexts.filterImage, url);
+      break;
+    case("kenburns"):
+      _replaceSelection(cm, stat.image, options.insertTexts.kenburnsImage, url);
+  }
 }
 
 /**

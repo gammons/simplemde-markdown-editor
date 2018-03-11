@@ -16201,21 +16201,22 @@ function drawImage(editor) {
 }
 
 function drawImageUrl(editor, url, style) {
-	var cm = editor.codemirror;
-	var stat = getState(cm);
-	var options = editor.options;
-	switch(style) {
-		case(""):
-			_replaceSelection(cm, stat.image, options.insertTexts.image, url);
-			break;
-		case("inline"):
-			_replaceSelection(cm, stat.image, options.insertTexts.inlineImage, url);
-			break;
-		case("filter"):
-			_replaceSelection(cm, stat.image, options.insertTexts.filterImage, url);
-		case("kenburns"):
-			_replaceSelection(cm, stat.image, options.insertTexts.kenburnsImage, url);
-	}
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+  var options = editor.options;
+  switch(style) {
+    case(""):
+      _replaceSelection(cm, stat.image, options.insertTexts.image, url);
+      break;
+    case("inline"):
+      _replaceSelection(cm, stat.image, options.insertTexts.inlineImage, url);
+      break;
+    case("filter"):
+      _replaceSelection(cm, stat.image, options.insertTexts.filterImage, url);
+      break;
+    case("kenburns"):
+      _replaceSelection(cm, stat.image, options.insertTexts.kenburnsImage, url);
+  }
 }
 
 /**
@@ -17610,5 +17611,6 @@ SimpleMDE.prototype.toTextArea = function() {
 };
 
 module.exports = SimpleMDE;
+
 },{"./codemirror/tablist":18,"codemirror":10,"codemirror-spell-checker":4,"codemirror/addon/display/fullscreen.js":5,"codemirror/addon/display/placeholder.js":6,"codemirror/addon/edit/continuelist.js":7,"codemirror/addon/mode/overlay.js":8,"codemirror/addon/selection/mark-selection.js":9,"codemirror/mode/gfm/gfm.js":11,"codemirror/mode/markdown/markdown.js":12,"codemirror/mode/xml/xml.js":14,"marked":16}]},{},[19])(19)
 });
