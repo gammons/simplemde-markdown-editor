@@ -16200,12 +16200,22 @@ function drawImage(editor) {
 	_replaceSelection(cm, stat.image, options.insertTexts.image, url);
 }
 
-function drawImageUrl(editor, url) {
+function drawImageUrl(editor, url, style) {
 	var cm = editor.codemirror;
 	var stat = getState(cm);
 	var options = editor.options;
-	_replaceSelection(cm, stat.image, options.insertTexts.image, url);
-
+	switch(style) {
+		case(""):
+			_replaceSelection(cm, stat.image, options.insertTexts.image, url);
+			break;
+		case("inline"):
+			_replaceSelection(cm, stat.image, options.insertTexts.inlineImage, url);
+			break;
+		case("filter"):
+			_replaceSelection(cm, stat.image, options.insertTexts.filterImage, url);
+		case("kenburns"):
+			_replaceSelection(cm, stat.image, options.insertTexts.kenburnsImage, url);
+	}
 }
 
 /**
@@ -16807,6 +16817,9 @@ var toolbarBuiltInButtons = {
 var insertTexts = {
 	link: ["[", "](#url#)"],
 	image: ["![](", "#url#)"],
+	inlineImage: ["![inline](", "#url#)"],
+	kenburnsImage: ["![kenburns](", "#url#)"],
+	filterImage: ["![filter](", "#url#)"],
 	table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text     | Text     |\n\n"],
 	horizontalRule: ["", "\n\n-----\n\n"]
 };
@@ -17518,8 +17531,8 @@ SimpleMDE.prototype.drawLink = function() {
 SimpleMDE.prototype.drawImage = function() {
 	drawImage(this);
 };
-SimpleMDE.prototype.drawImageUrl = function() {
-	drawImageUrl(this);
+SimpleMDE.prototype.drawImageUrl = function(simplemde, url, style) {
+	drawImageUrl(this, url, style);
 };
 SimpleMDE.prototype.drawTable = function() {
 	drawTable(this);
